@@ -324,7 +324,7 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
                       },
                       child: Padding(
                         padding: EdgeInsets.only(
-                          left: widget.minWidth *
+                          left: widget.maxWidth *
                                   (widget.customContentPaddingLeft < 0
                                       ? 1.1
                                       : 1) +
@@ -337,7 +337,7 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
                     )
                   : Padding(
                       padding: EdgeInsets.only(
-                        left: widget.minWidth *
+                        left: widget.maxWidth *
                                 (widget.customContentPaddingLeft < 0
                                     ? 1.1
                                     : 1) +
