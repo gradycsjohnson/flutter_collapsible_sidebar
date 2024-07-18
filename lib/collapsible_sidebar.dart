@@ -162,7 +162,7 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
 
     _isCollapsed = widget.isCollapsed;
     var endWidth = _isCollapsed ? widget.minWidth : tempWidth;
-    _animateTo(endWidth);
+    animateTo(endWidth);
   }
 
   @override
@@ -185,10 +185,10 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
   void _listenCollapseChange() {
     _isCollapsed = widget.isCollapsed;
     var endWidth = _isCollapsed ? widget.minWidth : tempWidth;
-    _animateTo(endWidth);
+    animateTo(endWidth);
   }
 
-  void _animateTo(double endWidth) {
+  void animateTo(double endWidth) {
     _widthAnimation = Tween<double>(
       begin: _currWidth,
       end: endWidth,
@@ -223,7 +223,7 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
       var endWidth = _currWidth - widget.minWidth > threshold
           ? tempWidth
           : widget.minWidth;
-      _animateTo(endWidth);
+      animateTo(endWidth);
     }
   }
 
@@ -320,7 +320,7 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
                   ? GestureDetector(
                       onTap: () {
                         _isCollapsed = true;
-                        _animateTo(widget.minWidth);
+                        animateTo(widget.minWidth);
                       },
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -469,7 +469,7 @@ class _CollapsibleSidebarState extends State<CollapsibleSidebar>
       onTap: () {
         _isCollapsed = !_isCollapsed;
         var endWidth = _isCollapsed ? widget.minWidth : tempWidth;
-        _animateTo(endWidth);
+        animateTo(endWidth);
       },
     );
   }
